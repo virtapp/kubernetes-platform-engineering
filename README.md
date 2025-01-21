@@ -16,7 +16,7 @@ Based on 100s of platform engineering setups in organizations of all sizes, this
 
 
 ## AWS 
-![aws1](https://github.com/user-attachments/assets/71d1200c-8703-41c3-8690-6987a56e2c22)
+![image](https://github.com/user-attachments/assets/cbd11faf-a3a6-43e9-a20f-0dd457c9c60c)
 
 ## GCP
 ![image](https://github.com/user-attachments/assets/e1053d7f-5aa1-416e-9277-5d3df0fb31a9)
