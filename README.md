@@ -19,7 +19,7 @@ Based on 100s of platform engineering setups in organizations of all sizes, this
 ![aws1](https://github.com/user-attachments/assets/71d1200c-8703-41c3-8690-6987a56e2c22)
 
 ## GCP
-![google1](https://github.com/user-attachments/assets/ddc05b00-dfa0-42aa-8edb-da79b0ed992e)
+![image](https://github.com/user-attachments/assets/e1053d7f-5aa1-416e-9277-5d3df0fb31a9)
 
 ## RedHat
 ![image](https://github.com/user-attachments/assets/e77b5bd9-af77-48d0-8070-dc34153a69a3)
