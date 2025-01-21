@@ -18,15 +18,16 @@ Based on 100s of platform engineering setups in organizations of all sizes, this
 
 
 ## AWS 
-![aws1](https://github.com/user-attachments/assets/4bdcfd7e-cdba-41a4-99d0-9da50fd02217)
+![aws1](https://github.com/user-attachments/assets/71d1200c-8703-41c3-8690-6987a56e2c22)
 
 ## GCP
-![aws1](https://github.com/user-attachments/assets/450d89b4-8474-4971-8fc2-2e0b1cc5e7fc)
+![google1](https://github.com/user-attachments/assets/ddc05b00-dfa0-42aa-8edb-da79b0ed992e)
 
 ## RedHat
-![Redhat1](https://github.com/user-attachments/assets/97c81253-cc65-4f15-a38f-ccc9a29ee914)
+![image](https://github.com/user-attachments/assets/e77b5bd9-af77-48d0-8070-dc34153a69a3)
 
 ## Azure
-![Azure1](https://github.com/user-attachments/assets/bf21d8f4-28df-45d5-a6b9-d432f2a170a3)
+![Azure1](https://github.com/user-attachments/assets/88c60fcd-19a8-4a24-afd4-2833796a07b3)
+
 
 
