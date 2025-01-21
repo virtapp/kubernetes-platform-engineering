@@ -17,14 +17,10 @@ Based on 100s of platform engineering setups in organizations of all sizes, this
 ```
 
 
-🎯 Focus
-```
+## AWS 
+![aws1](https://github.com/user-attachments/assets/4bdcfd7e-cdba-41a4-99d0-9da50fd02217)
 
-```
+## GCP
+![aws1](https://github.com/user-attachments/assets/450d89b4-8474-4971-8fc2-2e0b1cc5e7fc)
 
-
-🧩 Config 
-```
-
-```
 
