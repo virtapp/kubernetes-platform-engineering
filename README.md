@@ -5,7 +5,7 @@ Based on 100s of platform engineering setups in organizations of all sizes, this
 
 
 
-🚀  Key Features
+🧱  Key Features
 ```
 ✅ Developer
 ✅ Integration and Delivery 
@@ -14,6 +14,13 @@ Based on 100s of platform engineering setups in organizations of all sizes, this
 ✅ Security Plane
 ```
 
+🚀 
+```
+terraform init
+terraform validate
+terraform plan -var-file="template.tfvars"
+terraform apply -var-file="template.tfvars" -auto-approve
+```
 
 ### AWS 
 ![image](https://github.com/user-attachments/assets/cbd11faf-a3a6-43e9-a20f-0dd457c9c60c)
