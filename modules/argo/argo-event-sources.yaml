@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: velero-events
+  namespace: argo-events
+spec:
+  eventBusName: default
+  resource:
+    velero-backup-status:
+      eventTypes:
+        - ADD
+        - UPDATE
+        - DELETE
+      group: velero.io
+      version: v1
+      resource: backups
+      namespace: velero
+      filter:
+        labels:
+          - key: velero.io/schedule-name
+            value: resources-velero-ui
+

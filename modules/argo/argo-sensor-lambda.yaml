@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: aws-creds
+  namespace: argo-events
+type: Opaque
+stringData:
+  aws-access-key-id: sfsfsdfsfrervrdvdv
+  aws-secret-access-key: sfretege48784fjkjfkjhdjkghkjdhkdryrur
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: velero-backup-sensor
+  namespace: argo-events
+spec:
+  eventBusName: default
+  template:
+    serviceAccountName: argo-events-sa
+  dependencies:
+    - name: velero-backup-dep
+      eventSourceName: velero-events
+      eventName: velero-backup-status
+  triggers:
+    - template:
+        name: invoke-lambda
+        awsLambda:
+          functionName: IntegrationWithVelero
+          region: us-west-2
+          accessKey:
+            key: aws-access-key-id
+            name: aws-creds
+          secretKey:
+            key: aws-secret-access-key
+            name: aws-creds
+          payload:
+            - src:
+                dependencyName: velero-backup-dep
+              dest: event                     # Full raw event payload
+            - src:
+                dependencyName: velero-backup-dep
+                dataKey: body.status.phase    # Extract only the phase
+              dest: phase                     # Will be passed as "phase" in payload
+          invocationType: RequestResponse
+      retryStrategy:
+        steps: 3
+        duration: 10s
