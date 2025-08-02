@@ -33,4 +33,3 @@ resource "null_resource" "k3s_status" {
 }
 
 
-
