@@ -1,13 +1,13 @@
 
-resource "helm_release" "argo_events" {
-  name       = "argo-events"
-  repository = "https://argoproj.github.io/argo-helm"
-  chart      = "argo-events"
-  namespace  = "argo-events"
-  version    = "2.4.9"  # Replace with the latest if needed
+resource "helm_release" "argocd" {
+  name             = "argocd"
+  repository       = "https://argoproj.github.io/argo-helm"
+  chart            = "argo-cd"
+  namespace        = "argocd"
+  version          = "6.7.13" # Check for latest version if needed
   create_namespace = true
-  # Optional: override default chart values
-  #values = [
-  #  file("argo-events-values.yaml")  # optional, see below
-  #]
+
+  # Optional: override values
+  # values = [file("argocd-values.yaml")]
 }
+
