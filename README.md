@@ -11,7 +11,7 @@ Based on 100s of platform engineering setups in organizations of all sizes, this
 ✅ Integration and Delivery 
 ✅ Resources ( Compute , Data , Network , Services )
 ✅ Monitoring & Logging
-✅ Security
+✅ Security Plane
 ```
 
 
