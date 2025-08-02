@@ -17,7 +17,7 @@ module "argo" {
 
 module "application" {
   source = "./modules/application"
-  depends_on = [module.argo 
+  depends_on = [module.argo]
 }
 
 
