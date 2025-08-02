@@ -15,5 +15,9 @@ module "argo" {
   depends_on = [module.nginx] 
 }
 
+module "application" {
+  source = "./modules/application"
+  depends_on = [module.argo 
+}
 
 
