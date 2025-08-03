@@ -1,6 +1,5 @@
 
 #!/bin/bash
-
 set -e
 
 ROLE=$1
@@ -21,5 +20,7 @@ else
   echo "[ERROR] This script supports only server role for now."
   exit 1
 fi
-
 echo "[INFO] K3s installation complete (traefik and local-storage disabled)."
+
+
+
