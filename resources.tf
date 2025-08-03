@@ -1,4 +1,5 @@
 
+
 provider "helm" {
   kubernetes = {
     config_path = "~/.kube/config"
@@ -15,8 +16,8 @@ module "argo" {
   depends_on = [module.nginx] 
 }
 
-module "app-monitor" {
-  source = "./modules/app-monitor"
+module "app" {
+  source = "./modules/app"
   depends_on = [module.argo]
 }
 
