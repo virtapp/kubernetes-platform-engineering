@@ -62,7 +62,7 @@ resource "kubernetes_ingress_v1" "argo-ingress" {
     }
   }
   tls {
-      secret_name = "local"
+      secret_name = "argo-tls"
     }
  }
 }
