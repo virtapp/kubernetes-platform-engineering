@@ -22,6 +22,7 @@ module "argo" {
 
 # 4️⃣ Ingress for the app
 resource "kubernetes_ingress_v1" "argo-ingress" {
+  depends_on = [module.argo]
   metadata {
     name      = "ingress-route-argo"
     namespace = "argocd"
