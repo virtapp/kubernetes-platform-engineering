@@ -15,6 +15,9 @@ variable "disable_components" {
   default = "--disable traefik --disable local-storage"
 }
 
-
+variable "ingress_host" {
+  description = "Hostname for ArgoCD ingress"
+  type        = string
+}
 
 
