@@ -5,6 +5,11 @@ set -e
 ROLE=$1
 VERSION=$2
 
+if command -v k3s >/dev/null 2>&1; then
+  echo "k3s already installed, skipping installation"
+  exit 0
+fi
+
 if [ -z "$ROLE" ] || [ -z "$VERSION" ]; then
   echo "[ERROR] Usage: $0 <server> <version>"
   exit 1
