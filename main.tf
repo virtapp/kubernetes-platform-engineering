@@ -5,10 +5,6 @@ terraform {
       source  = "hashicorp/null"
       version = "~> 3.0"
     }
-    argocd = {
-      source  = "argoproj-labs/argocd"
-      version = ">= 7.0.0"
-    }
   }
 }
 
