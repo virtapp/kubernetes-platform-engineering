@@ -47,8 +47,8 @@ while [ $opt != '' ]
             terraform apply -var-file="template.tfvars" -auto-approve && sleep 2
             terraform -chdir=modules/ingress/ init
             terraform -chdir=modules/ingress/ apply -auto-approve && sleep 2
-            terraform -chdir=modules/app/ init || exit 1
-            terraform -chdir=modules/app/ apply -auto-approve || exit 1
+            #terraform -chdir=modules/app/ init || exit 1
+            #terraform -chdir=modules/app/ apply -auto-approve || exit 1
             exit;
         ;;
         2) clear;
