@@ -3,16 +3,11 @@
 provider "kubernetes" {
   config_path = "~/.kube/config"
 }
+
 provider "helm" {
   kubernetes = {
     config_path = "~/.kube/config"
   }
-}
-provider "argocd" {
-  server_addr = "argocd-server.argocd.svc.cluster.local:443"
-  username    = "admin"
-  password    = "admin"
-  insecure    = true
 }
 
 module "nginx" {
@@ -25,7 +20,18 @@ module "argo" {
   depends_on = [module.nginx] 
 }
 
-# 4️⃣ Ingress for the app
+provider "argocd" {
+  server_addr = "argocd-server.argocd.svc.cluster.local:443"
+  username    = "admin"
+  password    = "admin"
+  insecure    = true
+}
+
+module "app" {
+  source = "./modules/app"
+  depends_on = [module.argo] 
+}
+
 
 
 
