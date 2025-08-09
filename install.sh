@@ -42,18 +42,19 @@ while [ $opt != '' ]
       case $opt in
         1) clear;
             option_picked "Install Software";
-            terraform init || exit 1
-            terraform validate || exit 1
-            terraform apply -var-file="template.tfvars" -auto-approve && sleep 2
+            terraform init && terraform validate
+            terraform apply -var-file="template.tfvars" -auto-approve || exit 1
             terraform -chdir=modules/ingress/ init
-            terraform -chdir=modules/ingress/ apply -auto-approve && sleep 2
+            terraform -chdir=modules/ingress/ apply -auto-approve 
+            && sleep 2
             #terraform -chdir=modules/app/ init || exit 1
             #terraform -chdir=modules/app/ apply -auto-approve || exit 1
             exit;
         ;;
         2) clear;
             option_picked "Destroy Software";
-            terraform destroy -var-file="template.tfvars" -auto-approve || exit 1
+            terraform destroy -var-file="template.tfvars" -auto-approve || exit 1 
+            k3s-uninstall.sh || exit 1 
             exit;
         ;;
         3) clear;
