@@ -32,4 +32,12 @@ resource "null_resource" "k3s_status" {
   depends_on = [null_resource.k3s_config]
 }
 
+resource "null_resource" "add_hosts_entry" {
+  provisioner "local-exec" {
+    command = <<EOT
+      grep -qxF '172.16.100.70 argo.local.com' /etc/hosts || echo '172.16.100.70 argo.local.com' | sudo tee -a /etc/hosts
+    EOT
+  }
+  depends_on = [null_resource.k3s_config
+}
 
