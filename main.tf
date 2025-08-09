@@ -38,6 +38,6 @@ resource "null_resource" "add_hosts_entry" {
       grep -qxF '172.16.100.70 argo.local.com' /etc/hosts || echo '172.16.100.70 argo.local.com' | sudo tee -a /etc/hosts
     EOT
   }
-  depends_on = [null_resource.k3s_config
+  depends_on = [null_resource.k3s_config]
 }
 
