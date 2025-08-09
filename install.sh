@@ -44,16 +44,16 @@ while [ $opt != '' ]
             option_picked "Install Software";
             terraform init || exit 1
             terraform validate || exit 1
-            terraform apply -var-file="template.tfvars" -auto-approve && 
+            terraform apply -var-file="template.tfvars" -auto-approve && sleep 2
             terraform -chdir=modules/ingress/ init
-            terraform -chdir=modules/ingress/ apply -auto-approv &&
-            terraform -chdir=modules/app/ init
-            terraform -chdir=modules/app/ apply -auto-approve
+            terraform -chdir=modules/ingress/ apply -auto-approve && sleep 2
+            terraform -chdir=modules/app/ init || exit 1
+            terraform -chdir=modules/app/ apply -auto-approve || exit 1
             exit;
         ;;
         2) clear;
             option_picked "Destroy Software";
-            terraform destroy -var-file="template.tfvars" -auto-approve
+            terraform destroy -var-file="template.tfvars" -auto-approve || exit 1
             exit;
         ;;
         3) clear;
