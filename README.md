@@ -19,6 +19,9 @@ terraform init
 terraform validate
 terraform plan -var-file="template.tfvars"
 terraform apply -var-file="template.tfvars" -auto-approve
+&&
+terraform -chdir=modules/app/ init
+terraform -chdir=modules/app/ apply -auto-approve
 ```
 
 ### AWS 
