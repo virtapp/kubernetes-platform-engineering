@@ -17,9 +17,9 @@ show_menu(){
     printf "*        Please conatct with IT Department before using this script        *\n"
     printf "${green}****************************************************************************\n"
 
-    printf "${menu}${number} 1)${menu} Install Software ${normal}\n"
+    printf "${menu}${number} 1)${menu} Install & Upgrade Software ${normal}\n"
     printf "${menu}${number} 2)${menu} Destroy Software ${normal}\n"
-    printf "${menu}${number} 3)${menu} Curent Configuration ${normal}\n"
+    printf "${menu}${number} 3)${menu} Show Curent Configuration ${normal}\n"
     printf "\n"
     printf "Please enter a menu option and enter or ${fgred}0 to exit ${normal}:\n"
     read opt
@@ -41,9 +41,10 @@ while [ $opt != '' ]
     else
       case $opt in
         1) clear;
-            option_picked "Install Software";
+            option_picked "Install & Upgrade Software";
             terraform init && terraform validate
             terraform apply -var-file="template.tfvars" -auto-approve || exit 1
+            && sleep 2
             terraform -chdir=modules/ingress/ init
             terraform -chdir=modules/ingress/ apply -auto-approve 
             && sleep 2
@@ -58,7 +59,7 @@ while [ $opt != '' ]
             exit;
         ;;
         3) clear;
-            option_picked "Current Configuration";
+            option_picked "Show Current Configuration";
             kubectl cluster-info && sleep 2
             echo -e "Get Information of the nodes:\e" && sleep 2
             kubectl get nodes -o wide && sleep 2
