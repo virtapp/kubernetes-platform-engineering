@@ -20,13 +20,6 @@ module "argo" {
   depends_on = [module.nginx] 
 }
 
-provider "argocd" {
-  server_addr = "argocd-server.argocd.svc.cluster.local:443"
-  username    = "admin"
-  password    = "admin"
-  insecure    = true
-}
-
 module "app" {
   source = "./modules/app"
   depends_on = [module.argo] 
