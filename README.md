@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/0ceeb685-b8e5-4f90-8d77-00cdc23dbd87)
 
-## Platform Engineering | ⭐⭐⭐ | 🚀
+## Platform Engineering | 🚀🚀🚀
 Based on 100s of platform engineering setups in organizations of all sizes, this landscape distills the best practices in designing Internal Developer Platforms. Understand what’s out there and learn the right combination for an IDP that works for your organization.
 
 
@@ -19,6 +19,9 @@ terraform init
 terraform validate
 terraform plan -var-file="template.tfvars"
 terraform apply -var-file="template.tfvars" -auto-approve
+&&
+terraform -chdir=modules/app/ init
+terraform -chdir=modules/app/ apply -auto-approve
 ```
 
 ### AWS 
