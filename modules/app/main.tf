@@ -1,3 +1,18 @@
+terraform {
+  required_providers {
+    argocd = {
+      source  = "argoproj-labs/argocd"
+      version = ">= 7.0.0"
+    }
+  }
+}
+
+provider "argocd" {
+  server_addr = "argocd-server.argocd.svc.cluster.local:443"
+  username    = "admin"
+  password    = "admin"
+  insecure    = true
+}
 
 ###---Application
 resource "argocd_application" "grafana" {
