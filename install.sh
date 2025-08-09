@@ -59,8 +59,6 @@ while [ $opt != '' ]
         3) clear;
             option_picked "Current Configuration";
             kubectl cluster-info && sleep 2
-            echo -e "Collecting Information of the memory:\e" && sleep 2
-            kubectl top nodes | grep -v MEMORY% && sleep 2
             echo -e "Get Information of the nodes:\e" && sleep 2
             kubectl get nodes -o wide && sleep 2
             echo -e "Get Information of the services:\e" && sleep 2
