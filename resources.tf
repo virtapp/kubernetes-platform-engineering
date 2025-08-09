@@ -3,11 +3,16 @@
 provider "kubernetes" {
   config_path = "~/.kube/config"
 }
-
 provider "helm" {
   kubernetes = {
     config_path = "~/.kube/config"
   }
+}
+provider "argocd" {
+  server_addr = "argo-demo.virtapp.io"
+  username    = "admin"
+  password    = "admin"
+  insecure    = true
 }
 
 module "nginx" {
