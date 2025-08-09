@@ -9,7 +9,7 @@ provider "helm" {
   }
 }
 provider "argocd" {
-  server_addr = "argo-demo.virtapp.io"
+  server_addr = "argocd-server.argocd.svc.cluster.local:443"
   username    = "admin"
   password    = "admin"
   insecure    = true
